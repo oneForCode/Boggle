@@ -48,29 +48,18 @@ function App() {
   const getLetter = (row, col) => {
 
     if (!cubesAvailable || !cubesAvailable.length) {
-      console.log('>>> cubesAvailable reset!!  <<<<<');
       cubesAvailable = [...distributions];
     }
 
     const nextCubeIndex = Math.floor(Math.random() * (cubesAvailable.length));
-    // console.log('>> nextCubeIndex = ', nextCubeIndex);
 
     const nextCube = cubesAvailable[nextCubeIndex];
-    // console.log('>> nextCube = ', nextCube);
-
 
     if (!nextCube) debugger;
 
     const nextLetter = nextCube[Math.floor(Math.random() * nextCube.length)];
 
-    // console.log('>> nextLetter = ', nextLetter);
-
-    // console.log('>> before cubesAvailable = ', cubesAvailable);
-    // remove cube from list of available
     cubesAvailable.splice(nextCubeIndex, 1);
-
-    // console.log('>> after cubesAvailable = ', cubesAvailable);
-
 
     return nextLetter;
   }
@@ -86,8 +75,6 @@ function App() {
 
       }
     }
-
-    // console.log('>>> board = ', board);
 
     return board;
   };
